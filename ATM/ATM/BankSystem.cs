@@ -30,6 +30,16 @@ namespace ATM
         {
 
         }
+
+        private void buttonLaunchATM_Click(object sender, EventArgs e)
+        {
+            new AccountForm().Show();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
     class Account
