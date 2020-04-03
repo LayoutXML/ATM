@@ -38,7 +38,7 @@
             this.labelDisplayBalance.AutoSize = true;
             this.labelDisplayBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDisplayBalance.ForeColor = System.Drawing.Color.White;
-            this.labelDisplayBalance.Location = new System.Drawing.Point(211, 136);
+            this.labelDisplayBalance.Location = new System.Drawing.Point(207, 111);
             this.labelDisplayBalance.Name = "labelDisplayBalance";
             this.labelDisplayBalance.Size = new System.Drawing.Size(388, 39);
             this.labelDisplayBalance.TabIndex = 0;
@@ -49,7 +49,7 @@
             this.labelBalance.AutoSize = true;
             this.labelBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBalance.ForeColor = System.Drawing.Color.White;
-            this.labelBalance.Location = new System.Drawing.Point(297, 198);
+            this.labelBalance.Location = new System.Drawing.Point(292, 166);
             this.labelBalance.Name = "labelBalance";
             this.labelBalance.Size = new System.Drawing.Size(199, 55);
             this.labelBalance.TabIndex = 1;
@@ -58,7 +58,7 @@
             // buttonGoBack
             // 
             this.buttonGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGoBack.Location = new System.Drawing.Point(35, 385);
+            this.buttonGoBack.Location = new System.Drawing.Point(36, 343);
             this.buttonGoBack.Name = "buttonGoBack";
             this.buttonGoBack.Size = new System.Drawing.Size(120, 55);
             this.buttonGoBack.TabIndex = 2;
@@ -71,7 +71,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(800, 471);
+            this.ClientSize = new System.Drawing.Size(800, 433);
             this.Controls.Add(this.buttonGoBack);
             this.Controls.Add(this.labelBalance);
             this.Controls.Add(this.labelDisplayBalance);
