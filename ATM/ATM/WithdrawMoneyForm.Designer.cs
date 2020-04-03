@@ -41,6 +41,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.labelSelectAmount = new System.Windows.Forms.Label();
+            this.labelAmountOptions = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonEnter
@@ -176,12 +178,36 @@
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // labelSelectAmount
+            // 
+            this.labelSelectAmount.AutoSize = true;
+            this.labelSelectAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectAmount.ForeColor = System.Drawing.Color.White;
+            this.labelSelectAmount.Location = new System.Drawing.Point(114, 69);
+            this.labelSelectAmount.Name = "labelSelectAmount";
+            this.labelSelectAmount.Size = new System.Drawing.Size(656, 32);
+            this.labelSelectAmount.TabIndex = 41;
+            this.labelSelectAmount.Text = "Please select an amount from the following options";
+            // 
+            // labelAmountOptions
+            // 
+            this.labelAmountOptions.AutoSize = true;
+            this.labelAmountOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAmountOptions.ForeColor = System.Drawing.Color.White;
+            this.labelAmountOptions.Location = new System.Drawing.Point(319, 119);
+            this.labelAmountOptions.Name = "labelAmountOptions";
+            this.labelAmountOptions.Size = new System.Drawing.Size(220, 150);
+            this.labelAmountOptions.TabIndex = 42;
+            this.labelAmountOptions.Text = "1. £10\r\n2. £20\r\n3. £50\r\n4. £100\r\n5. £500\r\n6. Enter another amount";
+            // 
             // WithdrawMoneyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 566);
+            this.Controls.Add(this.labelAmountOptions);
+            this.Controls.Add(this.labelSelectAmount);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonCancel);
@@ -198,6 +224,7 @@
             this.Name = "WithdrawMoneyForm";
             this.Text = "WithdrawMoneyForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -216,5 +243,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelSelectAmount;
+        private System.Windows.Forms.Label labelAmountOptions;
     }
 }
