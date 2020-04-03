@@ -14,7 +14,7 @@ namespace ATM
     {
 
         private Account[] ac = new Account[3];
-        private ATM atm;
+        //private ATM atm;
 
         public BankSystem()
         {
@@ -23,7 +23,7 @@ namespace ATM
             ac[1] = new Account(750, 2222, 222222);
             ac[2] = new Account(3000, 3333, 333333);
 
-            atm = new ATM(ac);
+            //atm = new ATM(ac);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace ATM
      *      
      *      the constutor contains the main funcitonality.
      */
-    class ATM
+    /*class ATM
     {
         //local referance to the array of accounts
         private Account[] ac;
@@ -151,7 +151,7 @@ namespace ATM
 
         }
 
-        /*
+        *//*
          *    this method promts for the input of an account number
          *    the string input is then converted to an int
          *    a for loop is used to check the enterd account number
@@ -159,7 +159,7 @@ namespace ATM
          *    if a match is found a referance to the match is returned
          *    if the for loop completest with no match we return null
          * 
-         */
+         *//*
         private Account findAccount()
         {
             Console.WriteLine("enter your account number..");
@@ -176,13 +176,13 @@ namespace ATM
 
             return null;
         }
-        /*
+        *//*
          * 
          *  this jsut promt the use to enter a pin number
          *  
          * returns the string entered converted to an int
          * 
-         */
+         *//*
         private int promptForPin()
         {
             Console.WriteLine("enter pin:");
@@ -191,14 +191,14 @@ namespace ATM
             return pinNumEntered;
         }
 
-        /*
+        *//*
          * 
          *  give the use the options to do with the accoutn
          *  
          *  promt for input
          *  and defer to appropriate method based on input
          *  
-         */
+         *//*
         private void dispOptions()
         {
             Console.WriteLine("1> take out cash");
@@ -227,13 +227,13 @@ namespace ATM
 
         }
 
-        /*
+        *//*
          * 
          * offer withdrawable amounts
          * 
          * based on input attempt to withraw the corosponding amount of money
          * 
-         */
+         *//*
         private void dispWithdraw()
         {
             Console.WriteLine("1> 10");
@@ -297,10 +297,10 @@ namespace ATM
                 }
             }
         }
-        /*
+        *//*
          *  display balance of activeAccount and await keypress
          *  
-         */
+         *//*
         private void dispBalance()
         {
             if (this.activeAccount != null)
@@ -311,5 +311,5 @@ namespace ATM
             }
         }
 
-    }
+    }*/
 }
