@@ -12,7 +12,7 @@ namespace ATM
 {
     public partial class AccountForm : Form
     {
-
+        
         public AccountForm()
         {
             InitializeComponent();
@@ -42,6 +42,11 @@ namespace ATM
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public string getAccountNumber()
+        {
+            return TextBoxAcc.Text;
         }
     }
 }

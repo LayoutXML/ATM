@@ -17,9 +17,9 @@ namespace ATM
             Console.WriteLine("hello from ATM");
 
             //ask for account number and store result in acctiveAccount (null if no match found)
-            activeAccount = this.findAccount();
+            this.findAccount();
 
-            if (activeAccount != null)
+           /* if (activeAccount != null)
             {
                 //if the account is found check the pin 
                 if (activeAccount.checkPin(this.promptForPin()))
@@ -31,7 +31,7 @@ namespace ATM
             else
             {   //if the account number entered is not found let the user know!
                 Console.WriteLine("no matching account found.");
-            }
+            }*/
 
             //wipes all text from the console
             //Console.Clear();
@@ -48,29 +48,34 @@ namespace ATM
          *    if the for loop completest with no match we return null
          * 
          */
-        private Account findAccount()
+        private void findAccount()
         {
-            Console.WriteLine("enter your account number..");
+            var atm = new AccountForm();
+            atm.Show();
+            atm.FormClosed += new System.Windows.Forms.FormClosedEventHandler(Atm_FormClosed);
+        }
 
-            int input = Convert.ToInt32(Console.ReadLine());
+        private void Atm_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        {
+            Console.WriteLine(((AccountForm) sender).getAccountNumber());
+
 
             for (int i = 0; i < this.ac.Length; i++)
             {
-                if (ac[i].getAccountNum() == input)
+                if (ac[i].getAccountNum().ToString() == ((AccountForm)sender).getAccountNumber())
                 {
-                    return ac[i];
+                    Console.WriteLine(i);
                 }
             }
-
-            return null;
         }
+
         /*
-         * 
-         *  this jsut promt the use to enter a pin number
-         *  
-         * returns the string entered converted to an int
-         * 
-         */
+* 
+*  this jsut promt the use to enter a pin number
+*  
+* returns the string entered converted to an int
+* 
+*/
         private int promptForPin()
         {
             Console.WriteLine("enter pin:");
