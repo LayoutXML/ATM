@@ -1,103 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Threading;
 
 namespace ATM
 {
-    public partial class BankSystem : Form
+    class AtmMachine
     {
-
-        private Account[] ac = new Account[3];
-        //private ATM atm;
-
-        public BankSystem()
-        {
-            InitializeComponent();
-            ac[0] = new Account(300, 1111, 111111);
-            ac[1] = new Account(750, 2222, 222222);
-            ac[2] = new Account(3000, 3333, 333333);
-
-            //atm = new ATM(ac);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonLaunchATM_Click(object sender, EventArgs e)
-        {
-            Thread ATM1 = new Thread(new ThreadStart(InitAtm));
-            ATM1.Start();
-        }
-
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void InitAtm()
-        {
-            var atm = new AccountForm();
-            atm.Show();
-        }
-    }
-
-    /* 
-     *      This is out main ATM class that preforms the actions outlined in the assigment hand out
-     *      
-     *      the constutor contains the main funcitonality.
-     */
-    /*class ATM
-    {
-        //local referance to the array of accounts
         private Account[] ac;
-
-        //this is a referance to the account that is being used
         private Account activeAccount = null;
 
-        // the atm constructor takes an array of account objects as a referance
-        public ATM(Account[] ac)
+        public AtmMachine(Account[] ac)
         {
             this.ac = ac;
             Console.WriteLine("hello from ATM");
 
-            // an infanite loop to keep the flow of controll going on and on
-            while (true)
+            //ask for account number and store result in acctiveAccount (null if no match found)
+            activeAccount = this.findAccount();
+
+            if (activeAccount != null)
             {
-
-                //ask for account number and store result in acctiveAccount (null if no match found)
-                activeAccount = this.findAccount();
-
-                if (activeAccount != null)
+                //if the account is found check the pin 
+                if (activeAccount.checkPin(this.promptForPin()))
                 {
-                    //if the account is found check the pin 
-                    if (activeAccount.checkPin(this.promptForPin()))
-                    {
-                        //if the pin is a match give the options to do stuff to the account (take money out, view balance, exit)
-                        dispOptions();
-                    }
+                    //if the pin is a match give the options to do stuff to the account (take money out, view balance, exit)
+                    dispOptions();
                 }
-                else
-                {   //if the account number entered is not found let the user know!
-                    Console.WriteLine("no matching account found.");
-                }
-
-                //wipes all text from the console
-                Console.Clear();
             }
+            else
+            {   //if the account number entered is not found let the user know!
+                Console.WriteLine("no matching account found.");
+            }
+
+            //wipes all text from the console
+            //Console.Clear();
 
 
         }
 
-        *//*
+        /*
          *    this method promts for the input of an account number
          *    the string input is then converted to an int
          *    a for loop is used to check the enterd account number
@@ -105,7 +47,7 @@ namespace ATM
          *    if a match is found a referance to the match is returned
          *    if the for loop completest with no match we return null
          * 
-         *//*
+         */
         private Account findAccount()
         {
             Console.WriteLine("enter your account number..");
@@ -122,13 +64,13 @@ namespace ATM
 
             return null;
         }
-        *//*
+        /*
          * 
          *  this jsut promt the use to enter a pin number
          *  
          * returns the string entered converted to an int
          * 
-         *//*
+         */
         private int promptForPin()
         {
             Console.WriteLine("enter pin:");
@@ -137,19 +79,19 @@ namespace ATM
             return pinNumEntered;
         }
 
-        *//*
+        /*
          * 
          *  give the use the options to do with the accoutn
          *  
          *  promt for input
          *  and defer to appropriate method based on input
          *  
-         *//*
+         */
         private void dispOptions()
         {
             Console.WriteLine("1> take out cash");
             Console.WriteLine("2> balance");
-            Console.WriteLine("3> exsit");
+            Console.WriteLine("3> exit");
 
             int input = Convert.ToInt32(Console.ReadLine());
 
@@ -173,13 +115,13 @@ namespace ATM
 
         }
 
-        *//*
+        /*
          * 
          * offer withdrawable amounts
          * 
          * based on input attempt to withraw the corosponding amount of money
          * 
-         *//*
+         */
         private void dispWithdraw()
         {
             Console.WriteLine("1> 10");
@@ -243,10 +185,10 @@ namespace ATM
                 }
             }
         }
-        *//*
+        /*
          *  display balance of activeAccount and await keypress
          *  
-         *//*
+         */
         private void dispBalance()
         {
             if (this.activeAccount != null)
@@ -257,5 +199,5 @@ namespace ATM
             }
         }
 
-    }*/
+    }
 }
