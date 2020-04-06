@@ -3,6 +3,8 @@ using ATM;
 
 public class Bank : Form
 {
+    public static BankSystem bankSystem;
+
     public Bank()
     {
 
@@ -10,6 +12,7 @@ public class Bank : Form
 
     public static void Main()
     {
-        Application.Run(new BankSystem());
+        bankSystem = new BankSystem();
+        Application.Run(bankSystem);
     }
 }

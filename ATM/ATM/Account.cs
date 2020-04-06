@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATM
 {
-    class Account
+    public class Account
     {
         //the attributes for the account
         private int balance;
@@ -60,9 +60,9 @@ namespace ATM
          * true if they match
          * false if they do not
          */
-        public Boolean checkPin(int pinEntered)
+        public Boolean checkPin(String pinEntered)
         {
-            if (pinEntered == pin)
+            if (pinEntered == pin.ToString())
             {
                 return true;
             }

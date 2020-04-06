@@ -12,9 +12,12 @@ namespace ATM
 {
     public partial class AccountForm : Form
     {
+
+        private AtmMachine atmMachine;
         
-        public AccountForm()
+        public AccountForm(AtmMachine atmMachine)
         {
+            this.atmMachine = atmMachine;
             InitializeComponent();
         }
 
@@ -36,7 +39,7 @@ namespace ATM
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             Hide();
-            new PinForm().Show();
+            new PinForm(atmMachine, TextBoxAcc.Text).Show();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
