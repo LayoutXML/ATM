@@ -17,15 +17,6 @@ namespace ATM
             this.launchForm();
         }
 
-        /*
-         *    this method promts for the input of an account number
-         *    the string input is then converted to an int
-         *    a for loop is used to check the enterd account number
-         *    against those held in the account array
-         *    if a match is found a referance to the match is returned
-         *    if the for loop completest with no match we return null
-         * 
-         */
         public void launchForm()
         {
             var atm = new AccountForm();
@@ -35,6 +26,7 @@ namespace ATM
 
         private void Atm_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
         {
+            // is not called for some reason :/
             Console.WriteLine("closed");
             Console.WriteLine(((AccountForm) sender).getAccountNumber());
 
@@ -46,57 +38,6 @@ namespace ATM
                     Console.WriteLine(i);
                 }
             }
-        }
-
-        /*
-* 
-*  this jsut promt the use to enter a pin number
-*  
-* returns the string entered converted to an int
-* 
-*/
-        private int promptForPin()
-        {
-            Console.WriteLine("enter pin:");
-            String str = Console.ReadLine();
-            int pinNumEntered = Convert.ToInt32(str);
-            return pinNumEntered;
-        }
-
-        /*
-         * 
-         *  give the use the options to do with the accoutn
-         *  
-         *  promt for input
-         *  and defer to appropriate method based on input
-         *  
-         */
-        private void dispOptions()
-        {
-            Console.WriteLine("1> take out cash");
-            Console.WriteLine("2> balance");
-            Console.WriteLine("3> exit");
-
-            int input = Convert.ToInt32(Console.ReadLine());
-
-            if (input == 1)
-            {
-                dispWithdraw();
-            }
-            else if (input == 2)
-            {
-                dispBalance();
-            }
-            else if (input == 3)
-            {
-
-
-            }
-            else
-            {
-
-            }
-
         }
 
         /*
@@ -167,19 +108,6 @@ namespace ATM
                         Console.ReadLine();
                     }
                 }
-            }
-        }
-        /*
-         *  display balance of activeAccount and await keypress
-         *  
-         */
-        private void dispBalance()
-        {
-            if (this.activeAccount != null)
-            {
-                Console.WriteLine(" your current balance is : " + activeAccount.getBalance());
-                Console.WriteLine(" (prese enter to continue)");
-                Console.ReadLine();
             }
         }
 

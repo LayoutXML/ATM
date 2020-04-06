@@ -71,6 +71,7 @@ namespace ATM
                 return false;
             }
         }
+
         public int getAccountNum()
         {
             return accountNum;

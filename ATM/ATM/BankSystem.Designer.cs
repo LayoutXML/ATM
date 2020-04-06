@@ -70,6 +70,7 @@
             this.buttonRace.TabIndex = 2;
             this.buttonRace.Text = "DATA RACE";
             this.buttonRace.UseVisualStyleBackColor = true;
+            this.buttonRace.Click += new System.EventHandler(this.buttonRace_Click);
             // 
             // buttonNonRace
             // 
@@ -81,6 +82,7 @@
             this.buttonNonRace.TabIndex = 3;
             this.buttonNonRace.Text = "NON-DATA RACE";
             this.buttonNonRace.UseVisualStyleBackColor = true;
+            this.buttonNonRace.Click += new System.EventHandler(this.buttonNonRace_Click);
             // 
             // buttonLaunchATM
             // 
