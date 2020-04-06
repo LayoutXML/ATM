@@ -32,7 +32,16 @@ namespace ATM
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(atmMachine.getAccount(accountNumber, TextBoxPin.Text));
+            if (atmMachine.getAccount(accountNumber, TextBoxPin.Text) < 0)
+            {
+                Hide();
+                new AccountForm(atmMachine).Show();
+            }
+            else
+            {
+                Hide();
+                new OptionForm(atmMachine).Show();
+            }
         }
 
         private void PinForm_Load(object sender, EventArgs e)

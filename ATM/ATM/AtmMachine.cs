@@ -5,7 +5,7 @@ namespace ATM
     public class AtmMachine
     {
         private Account[] ac;
-        private Account activeAccount = null;
+        public Account activeAccount = null;
 
         public AtmMachine(Account[] ac)
         {
@@ -37,6 +37,12 @@ namespace ATM
                     return -1;
                 }
             }
+
+            if (index >= 0)
+            {
+                activeAccount = ac[index];
+            }
+
             return index;
         }
 

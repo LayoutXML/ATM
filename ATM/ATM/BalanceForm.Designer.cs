@@ -38,9 +38,10 @@
             this.labelDisplayBalance.AutoSize = true;
             this.labelDisplayBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDisplayBalance.ForeColor = System.Drawing.Color.White;
-            this.labelDisplayBalance.Location = new System.Drawing.Point(207, 111);
+            this.labelDisplayBalance.Location = new System.Drawing.Point(155, 90);
+            this.labelDisplayBalance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDisplayBalance.Name = "labelDisplayBalance";
-            this.labelDisplayBalance.Size = new System.Drawing.Size(388, 39);
+            this.labelDisplayBalance.Size = new System.Drawing.Size(311, 31);
             this.labelDisplayBalance.TabIndex = 0;
             this.labelDisplayBalance.Text = "Your account balance is:";
             // 
@@ -49,18 +50,21 @@
             this.labelBalance.AutoSize = true;
             this.labelBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBalance.ForeColor = System.Drawing.Color.White;
-            this.labelBalance.Location = new System.Drawing.Point(292, 166);
+            this.labelBalance.Location = new System.Drawing.Point(219, 135);
+            this.labelBalance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(199, 55);
+            this.labelBalance.Size = new System.Drawing.Size(41, 44);
             this.labelBalance.TabIndex = 1;
-            this.labelBalance.Text = "£123.45";
+            this.labelBalance.Text = "£";
+            this.labelBalance.Click += new System.EventHandler(this.labelBalance_Click);
             // 
             // buttonGoBack
             // 
             this.buttonGoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGoBack.Location = new System.Drawing.Point(36, 343);
+            this.buttonGoBack.Location = new System.Drawing.Point(27, 279);
+            this.buttonGoBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonGoBack.Name = "buttonGoBack";
-            this.buttonGoBack.Size = new System.Drawing.Size(120, 55);
+            this.buttonGoBack.Size = new System.Drawing.Size(90, 45);
             this.buttonGoBack.TabIndex = 2;
             this.buttonGoBack.Text = "BACK";
             this.buttonGoBack.UseVisualStyleBackColor = true;
@@ -68,13 +72,14 @@
             // 
             // BalanceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(800, 433);
+            this.ClientSize = new System.Drawing.Size(600, 352);
             this.Controls.Add(this.buttonGoBack);
             this.Controls.Add(this.labelBalance);
             this.Controls.Add(this.labelDisplayBalance);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BalanceForm";
             this.Text = "BalanceForm";
             this.ResumeLayout(false);

@@ -1,25 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ATM
 {
     public partial class BalanceForm : Form
     {
-        public BalanceForm()
+        private AtmMachine atmMachine;
+
+        public BalanceForm(AtmMachine atmMachine)
         {
+            this.atmMachine = atmMachine;
             InitializeComponent();
+            labelBalance.Text += atmMachine.activeAccount.getBalance();
         }
 
         private void buttonGoBack_Click(object sender, EventArgs e)
         {
-            
+            Hide();
+            new OptionForm(atmMachine).Show();
+        }
+
+        private void labelBalance_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

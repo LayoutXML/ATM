@@ -12,9 +12,17 @@ namespace ATM
 {
     public partial class WithdrawMoneyForm : Form
     {
-        public WithdrawMoneyForm()
+        private AtmMachine atmMachine;
+
+        public WithdrawMoneyForm(AtmMachine atmMachine)
         {
+            this.atmMachine = atmMachine;
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
