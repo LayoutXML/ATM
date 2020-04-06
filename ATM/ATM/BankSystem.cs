@@ -14,11 +14,9 @@ namespace ATM
     public partial class BankSystem : Form
     {
         private Thread ATM1, ATM2;
-        public bool isDataRace = true;
         public Account[] ac = new Account[3];
         public Account currentAccountNum;   //use this in combination with the AtmControl semaphore
-        public Semaphore AtmControl = new Semaphore(0, 1, "AtmControl");    //call WaitOne whenever a null current account, or the same current account, is being accessed by a thread
-                                                                            //reset currentAccount to null after usage
+
         public BankSystem()
         {
             InitializeComponent();
@@ -57,12 +55,12 @@ namespace ATM
 
         private void buttonRace_Click(object sender, EventArgs e)
         {
-            isDataRace = true;
+            Bank.isDataRace = true;
         }
 
         private void buttonNonRace_Click(object sender, EventArgs e)
         {
-            isDataRace = false;
+            Bank.isDataRace = false;
         }
     }
 }

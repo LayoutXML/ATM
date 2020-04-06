@@ -33,11 +33,12 @@ namespace ATM
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             Console.WriteLine(atmMachine.getAccount(accountNumber, TextBoxPin.Text));
-            /*if(!isDataRace && currentAccountNum == atmMachine.getAccount(accountNumber, TextBoxPin.Text))
+            if(!Bank.isDataRace && Bank.currentAccountNum == atmMachine.getAccount(accountNumber, TextBoxPin.Text))
             {
-                WaitOne();  //decrement semaphore thread number - needs to be released when transactions are complete with Release()
+                Bank.AtmControl.WaitOne();  //decrement semaphore thread number - needs to be released when transactions are complete with Release()
             }
-            else currentAccountNum = atmMachine.getAccount(accountNumber, TextBoxPin.Text);*/
+            else Bank.currentAccountNum = atmMachine.getAccount(accountNumber, TextBoxPin.Text);
+            Bank.AtmControl.Release();  //currently immediately releases thread
         }
 
         private void PinForm_Load(object sender, EventArgs e)
