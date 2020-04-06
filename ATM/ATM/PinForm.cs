@@ -22,7 +22,8 @@ namespace ATM
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Hide();
+            new AccountForm(atmMachine).Show();
         }
 
         private void buttonClear_Click(object sender, EventArgs e)

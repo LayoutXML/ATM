@@ -38,7 +38,7 @@ namespace ATM
          *   true if the transactions if possible
          *   false if there are insufficent funds in the account
          */
-        public Boolean decrementBalance(int amount)
+        public bool decrementBalance(int amount)
         {
             if (this.balance > amount)
             {
@@ -55,8 +55,8 @@ namespace ATM
          * This funciton check the account pin against the argument passed to it
          *
          * returns:
-         * true if they match
-         * false if they do not
+         * true if they match and card not blocked
+         * false otherwise
          */
         public Boolean checkPin(String pinEntered)
         {
