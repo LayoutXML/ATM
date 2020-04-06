@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ATM
 {
     public partial class PinForm : Form
     {
-        public PinForm()
+        private AtmMachine atmMachine;
+        private String accountNumber;
+
+        public PinForm(AtmMachine atmMachine, String accountNumber)
         {
+            this.atmMachine = atmMachine;
+            this.accountNumber = accountNumber;
             InitializeComponent();
         }
 
@@ -34,7 +32,7 @@ namespace ATM
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-
+            Console.WriteLine(atmMachine.getAccount(accountNumber, TextBoxPin.Text));
         }
 
         private void PinForm_Load(object sender, EventArgs e)

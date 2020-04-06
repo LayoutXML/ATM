@@ -15,7 +15,7 @@ namespace ATM
     {
         public bool isDataRace = true;
         private Thread ATM1, ATM2;
-        private Account[] ac = new Account[3];
+        public Account[] ac = new Account[3];
 
         public BankSystem()
         {

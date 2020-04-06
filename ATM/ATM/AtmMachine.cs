@@ -2,7 +2,7 @@
 
 namespace ATM
 {
-    class AtmMachine
+    public class AtmMachine
     {
         private Account[] ac;
         private Account activeAccount = null;
@@ -15,25 +15,29 @@ namespace ATM
 
         public void launchForm()
         {
-            var atm = new AccountForm();
+            var atm = new AccountForm(this);
             System.Windows.Forms.Application.Run(atm);
-            atm.FormClosed += new System.Windows.Forms.FormClosedEventHandler(Atm_FormClosed);
         }
 
-        private void Atm_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        public int getAccount(String accountNumber, String pin)
         {
-            // is not called for some reason :/
-            Console.WriteLine("closed");
-            Console.WriteLine(((AccountForm) sender).getAccountNumber());
-
-
+            int index = -1;
             for (int i = 0; i < this.ac.Length; i++)
             {
-                if (ac[i].getAccountNum().ToString() == ((AccountForm)sender).getAccountNumber())
+                if (ac[i].getAccountNum().ToString() == accountNumber)
                 {
-                    Console.WriteLine(i);
+                    index = i;
                 }
             }
+
+            if (index >= 0)
+            {
+                if (!ac[index].checkPin(pin))
+                {
+                    return -1;
+                }
+            }
+            return index;
         }
 
         /*
