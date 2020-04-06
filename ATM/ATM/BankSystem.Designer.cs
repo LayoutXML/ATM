@@ -56,9 +56,9 @@
             this.labelChooseRace.Location = new System.Drawing.Point(116, 163);
             this.labelChooseRace.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelChooseRace.Name = "labelChooseRace";
-            this.labelChooseRace.Size = new System.Drawing.Size(391, 26);
+            this.labelChooseRace.Size = new System.Drawing.Size(402, 26);
             this.labelChooseRace.TabIndex = 1;
-            this.labelChooseRace.Text = "Please choose one of the option below:";
+            this.labelChooseRace.Text = "Please choose one of the options below:";
             // 
             // buttonRace
             // 
@@ -70,6 +70,7 @@
             this.buttonRace.TabIndex = 2;
             this.buttonRace.Text = "DATA RACE";
             this.buttonRace.UseVisualStyleBackColor = true;
+            this.buttonRace.Click += new System.EventHandler(this.buttonRace_Click);
             // 
             // buttonNonRace
             // 
@@ -81,6 +82,7 @@
             this.buttonNonRace.TabIndex = 3;
             this.buttonNonRace.Text = "NON-DATA RACE";
             this.buttonNonRace.UseVisualStyleBackColor = true;
+            this.buttonNonRace.Click += new System.EventHandler(this.buttonNonRace_Click);
             // 
             // buttonLaunchATM
             // 

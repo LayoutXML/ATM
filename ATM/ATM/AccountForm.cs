@@ -13,8 +13,11 @@ namespace ATM
     public partial class AccountForm : Form
     {
 
-        public AccountForm()
+        private AtmMachine atmMachine;
+        
+        public AccountForm(AtmMachine atmMachine)
         {
+            this.atmMachine = atmMachine;
             InitializeComponent();
         }
 
@@ -36,12 +39,17 @@ namespace ATM
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             Hide();
-            new PinForm().Show();
+            new PinForm(atmMachine, TextBoxAcc.Text).Show(); //reopen previous form
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Hide();
+        }
+
+        public string getAccountNumber()
+        {
+            return TextBoxAcc.Text;
         }
     }
 }

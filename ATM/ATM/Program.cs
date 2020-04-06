@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using System.Threading;
+using ATM;
 
-namespace ATM
+public class Bank : Form
 {
-    static class Program
+    public static BankSystem bankSystem;
+    public static string currentAccountNum;
+    public static bool isDataRace;
+    public static Semaphore AtmControl = new Semaphore(0, 1, "AtmControl");    //call WaitOne whenever a null current account, or the same current account, is being accessed by a thread
+                                                                        //reset currentAccount to null after usage
+
+    public Bank()
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BankSystem());
-        }
+
+    }
+
+    public static void Main()
+    {
+        bankSystem = new BankSystem();
+        Application.Run(bankSystem);
     }
 }
