@@ -40,7 +40,7 @@ namespace ATM
         {
             MessageBox.Show("Returning card. Goodbye!", "Goodbye", MessageBoxButtons.OK, MessageBoxIcon.Information);
             atmMachine.activeAccount.decrementBalance(atmMachine.amountToWithdraw);
-            Bank.AtmControl.Release();
+            if(!Bank.isDataRace) Bank.AtmControl.Release();
             Hide();
         }
 
