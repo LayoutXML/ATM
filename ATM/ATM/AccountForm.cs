@@ -39,7 +39,7 @@ namespace ATM
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             Hide();
-            new PinForm(atmMachine, TextBoxAcc.Text).Show();
+            new PinForm(atmMachine, TextBoxAcc.Text).Show(); //reopen previous form
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

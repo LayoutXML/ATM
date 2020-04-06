@@ -23,7 +23,7 @@ namespace ATM
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Hide();
-            new AccountForm(atmMachine).Show();
+            new AccountForm(atmMachine).Show(); //reopen previous form
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace ATM
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-            if (atmMachine.getAccount(accountNumber, TextBoxPin.Text) < 0)
+            if (atmMachine.getAccount(accountNumber, TextBoxPin.Text) < 0) //open correct form depending on whether account inputs are correct
             {
                 Hide();
                 new AccountForm(atmMachine).Show();

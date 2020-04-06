@@ -39,7 +39,7 @@ namespace ATM
 
         private void buttonLaunchATM_Click(object sender, EventArgs e)
         {
-            ATM1 = new Thread(new ThreadStart(InitAtm));
+            ATM1 = new Thread(new ThreadStart(InitAtm)); //creating a thread
             ATM1.Start();
 
             ATM2 = new Thread(new ThreadStart(InitAtm));
@@ -48,7 +48,7 @@ namespace ATM
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            ATM1.Abort();
+            ATM1.Abort(); //correctly stopping threads to not create memory leaks
             ATM2.Abort();
             Application.Exit();
         }

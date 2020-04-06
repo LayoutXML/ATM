@@ -16,14 +16,14 @@ namespace ATM
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Hide();
-            new OptionForm(atmMachine).Show();
+            new OptionForm(atmMachine).Show(); //reopen previous form
         }
 
         private void InsufficientFunds()
         {
             MessageBox.Show("Insufficient funds in your account balance", "Inssuficient funds", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Hide();
-            new OptionForm(atmMachine).Show();
+            new OptionForm(atmMachine).Show(); //reopen previous form
         }
 
         private void button1_Click(object sender, EventArgs e)
