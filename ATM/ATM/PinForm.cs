@@ -22,7 +22,8 @@ namespace ATM
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Hide();
+            new AccountForm(atmMachine).Show();
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -32,6 +33,16 @@ namespace ATM
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
+            if (atmMachine.getAccount(accountNumber, TextBoxPin.Text) < 0)
+            {
+                Hide();
+                new AccountForm(atmMachine).Show();
+            }
+            else
+            {
+                Hide();
+                new OptionForm(atmMachine).Show();
+            }
             Console.WriteLine(atmMachine.getAccount(accountNumber, TextBoxPin.Text));
             if(!Bank.isDataRace && Bank.currentAccountNum == atmMachine.getAccount(accountNumber, TextBoxPin.Text))
             {
