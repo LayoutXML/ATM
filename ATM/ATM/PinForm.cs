@@ -33,6 +33,12 @@ namespace ATM
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
+            if (!Bank.isDataRace && Bank.currentAccountNum == accountNumber)
+            {
+                Bank.AtmControl.WaitOne();  //decrement semaphore thread number - needs to be released when transactions are complete with Release()
+            }
+            else Bank.currentAccountNum = accountNumber;
+
             if (atmMachine.getAccount(accountNumber, TextBoxPin.Text) < 0)
             {
                 Hide();
@@ -43,13 +49,6 @@ namespace ATM
                 Hide();
                 new OptionForm(atmMachine).Show();
             }
-            Console.WriteLine(atmMachine.getAccount(accountNumber, TextBoxPin.Text));
-            if(!Bank.isDataRace && Bank.currentAccountNum == atmMachine.getAccount(accountNumber, TextBoxPin.Text))
-            {
-                Bank.AtmControl.WaitOne();  //decrement semaphore thread number - needs to be released when transactions are complete with Release()
-            }
-            else Bank.currentAccountNum = atmMachine.getAccount(accountNumber, TextBoxPin.Text);
-            Bank.AtmControl.Release();  //currently immediately releases thread
         }
 
         private void PinForm_Load(object sender, EventArgs e)

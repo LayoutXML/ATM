@@ -39,7 +39,8 @@ namespace ATM
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Returning card. Goodbye!", "Goodbye", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Application.Exit();
+            Bank.AtmControl.Release();
+            Hide();
         }
 
         private void labelOptions_Click(object sender, EventArgs e)
