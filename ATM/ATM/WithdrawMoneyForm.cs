@@ -33,7 +33,8 @@ namespace ATM
             }
             else
             {
-                atmMachine.activeAccount.decrementBalance(10);
+                atmMachine.localBalance -= 10;
+                atmMachine.amountToWithdraw += 10;
                 Hide();
             }
         }
@@ -46,7 +47,8 @@ namespace ATM
             }
             else
             {
-                atmMachine.activeAccount.decrementBalance(20);
+                atmMachine.localBalance -= 20;
+                atmMachine.amountToWithdraw += 20;
                 Hide();
             }
         }
@@ -59,7 +61,8 @@ namespace ATM
             }
             else
             {
-                atmMachine.activeAccount.decrementBalance(50);
+                atmMachine.localBalance -= 50;
+                atmMachine.amountToWithdraw += 50;
                 Hide();
             }
         }
@@ -72,7 +75,8 @@ namespace ATM
             }
             else
             {
-                atmMachine.activeAccount.decrementBalance(100);
+                atmMachine.localBalance -= 100;
+                atmMachine.amountToWithdraw += 100;
                 Hide();
             }
         }
@@ -85,7 +89,8 @@ namespace ATM
             }
             else
             {
-                atmMachine.activeAccount.decrementBalance(500);
+                atmMachine.localBalance -= 500;
+                atmMachine.amountToWithdraw += 500;
                 Hide();
             }
         }

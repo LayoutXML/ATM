@@ -11,7 +11,7 @@ namespace ATM
         {
             this.atmMachine = atmMachine;
             InitializeComponent();
-            labelBalance.Text += atmMachine.activeAccount.getBalance();
+            labelBalance.Text += atmMachine.localBalance;
         }
 
         private void buttonGoBack_Click(object sender, EventArgs e)

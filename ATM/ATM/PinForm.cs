@@ -49,6 +49,8 @@ namespace ATM
                 Hide();
                 new OptionForm(atmMachine).Show();
             }
+
+            atmMachine.localBalance = atmMachine.activeAccount.getBalance();
         }
 
         private void PinForm_Load(object sender, EventArgs e)

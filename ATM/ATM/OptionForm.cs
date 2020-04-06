@@ -39,6 +39,7 @@ namespace ATM
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Returning card. Goodbye!", "Goodbye", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            atmMachine.activeAccount.decrementBalance(atmMachine.amountToWithdraw);
             Bank.AtmControl.Release();
             Hide();
         }

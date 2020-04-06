@@ -6,6 +6,8 @@ namespace ATM
     {
         private Account[] ac;
         public Account activeAccount = null;
+        public int localBalance;
+        public int amountToWithdraw = 0;
 
         public AtmMachine(Account[] ac)
         {

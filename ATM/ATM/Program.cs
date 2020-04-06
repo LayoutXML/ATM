@@ -7,7 +7,7 @@ public class Bank : Form
     public static BankSystem bankSystem;
     public static string currentAccountNum;
     public static bool isDataRace;
-    public static Semaphore AtmControl = new Semaphore(0, 2, "AtmControl");    //call WaitOne whenever a null current account, or the same current account, is being accessed by a thread
+    public static Semaphore AtmControl = new Semaphore(0, 1, "AtmControl");    //call WaitOne whenever a null current account, or the same current account, is being accessed by a thread
                                                                         //reset currentAccount to null after usage
 
     public Bank()
