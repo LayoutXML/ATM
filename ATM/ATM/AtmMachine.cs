@@ -14,29 +14,7 @@ namespace ATM
         public AtmMachine(Account[] ac)
         {
             this.ac = ac;
-            Console.WriteLine("hello from ATM");
-
-            //ask for account number and store result in acctiveAccount (null if no match found)
-            this.findAccount();
-
-           /* if (activeAccount != null)
-            {
-                //if the account is found check the pin 
-                if (activeAccount.checkPin(this.promptForPin()))
-                {
-                    //if the pin is a match give the options to do stuff to the account (take money out, view balance, exit)
-                    dispOptions();
-                }
-            }
-            else
-            {   //if the account number entered is not found let the user know!
-                Console.WriteLine("no matching account found.");
-            }*/
-
-            //wipes all text from the console
-            //Console.Clear();
-
-
+            this.launchForm();
         }
 
         /*
@@ -48,15 +26,16 @@ namespace ATM
          *    if the for loop completest with no match we return null
          * 
          */
-        private void findAccount()
+        public void launchForm()
         {
             var atm = new AccountForm();
-            atm.Show();
+            System.Windows.Forms.Application.Run(atm);
             atm.FormClosed += new System.Windows.Forms.FormClosedEventHandler(Atm_FormClosed);
         }
 
         private void Atm_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
         {
+            Console.WriteLine("closed");
             Console.WriteLine(((AccountForm) sender).getAccountNumber());
 
 

@@ -20,7 +20,7 @@ namespace ATM
 
         private void AccountForm_Load(object sender, EventArgs e)
         {
-
+            Console.WriteLine("form loaded");
         }
 
         private void NumberButton_Click(object sender, EventArgs e)

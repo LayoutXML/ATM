@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using ATM;
 
@@ -43,6 +42,7 @@ public class Bank : Form
     private void InitAtm()
     {
         var atm = new AtmMachine(ac);
+        atm.launchForm();
         Console.WriteLine("test");
     }
 
