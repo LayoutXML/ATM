@@ -56,9 +56,9 @@
             this.labelChooseRace.Location = new System.Drawing.Point(116, 163);
             this.labelChooseRace.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelChooseRace.Name = "labelChooseRace";
-            this.labelChooseRace.Size = new System.Drawing.Size(391, 26);
+            this.labelChooseRace.Size = new System.Drawing.Size(402, 26);
             this.labelChooseRace.TabIndex = 1;
-            this.labelChooseRace.Text = "Please choose one of the option below:";
+            this.labelChooseRace.Text = "Please choose one of the options below:";
             // 
             // buttonRace
             // 
