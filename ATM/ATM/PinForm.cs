@@ -23,7 +23,7 @@ namespace ATM
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Hide();
-            new AccountForm(atmMachine).Show();
+            new AccountForm(atmMachine).Show(); //reopen previous form
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace ATM
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-            if (!Bank.isDataRace && Bank.currentAccountNum == accountNumber)
+            if (!Bank.isDataRace && Bank.currentAccountNum == accountNumber) //open correct form depending on whether account inputs are correct
             {
                 Bank.AtmControl.WaitOne();  //decrement semaphore thread number - needs to be released when transactions are complete with Release()
             }

@@ -18,9 +18,14 @@ namespace ATM
         public void launchForm()
         {
             var atm = new AccountForm(this);
-            System.Windows.Forms.Application.Run(atm);
+            System.Windows.Forms.Application.Run(atm); //launches account form
         }
 
+        /*
+         * Get account index in array based on accountnumber and pin.
+         * Locks account after too many attempts (3)
+         * If one of the inputs is incorrect, a default value (-1) is returned
+         */
         public int getAccount(String accountNumber, String pin)
         {
             int index = -1;
