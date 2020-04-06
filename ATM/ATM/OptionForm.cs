@@ -38,6 +38,7 @@ namespace ATM
 
         private void button3_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Returning card. Goodbye!", "Goodbye", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Exit();
         }
 
@@ -49,11 +50,6 @@ namespace ATM
         private void InvalidOption_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Invalid option for this screen selected", "Invalid Option", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

@@ -24,5 +24,20 @@ namespace ATM
         {
 
         }
+
+        private void labelOptions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Printing receipt...", "Printing...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void InvalidOption_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Invalid option for this screen selected", "Invalid Option", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
