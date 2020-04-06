@@ -16,7 +16,6 @@ namespace ATM
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Hide();
-            new OptionForm(atmMachine).Show();
         }
 
         private void InsufficientFunds()
@@ -32,6 +31,11 @@ namespace ATM
             {
                 InsufficientFunds();
             }
+            else
+            {
+                atmMachine.activeAccount.decrementBalance(10);
+                Hide();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -39,6 +43,11 @@ namespace ATM
             if (atmMachine.activeAccount.getBalance() < 20)
             {
                 InsufficientFunds();
+            }
+            else
+            {
+                atmMachine.activeAccount.decrementBalance(20);
+                Hide();
             }
         }
 
@@ -48,6 +57,11 @@ namespace ATM
             {
                 InsufficientFunds();
             }
+            else
+            {
+                atmMachine.activeAccount.decrementBalance(50);
+                Hide();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -56,6 +70,11 @@ namespace ATM
             {
                 InsufficientFunds();
             }
+            else
+            {
+                atmMachine.activeAccount.decrementBalance(100);
+                Hide();
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -63,6 +82,11 @@ namespace ATM
             if (atmMachine.activeAccount.getBalance() < 500)
             {
                 InsufficientFunds();
+            }
+            else
+            {
+                atmMachine.activeAccount.decrementBalance(500);
+                Hide();
             }
         }
     }
